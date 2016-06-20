@@ -32,7 +32,7 @@ sudo zypper install ibmysqlclient-devel # mysql/mariaDB on opensuse
 sudo apt-get install python-dev # ubuntu
 sudo zypper install python-devel # opensuse
 ```
-* Install django and db
+* Install django and other requirements
 ```bash
 # use pip for python3 and virutalenv(optional)
 pip install -r requirements.txt
