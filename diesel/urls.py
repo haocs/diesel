@@ -21,10 +21,8 @@ urlpatterns = [
 
     # blog app
     url(r'^blog/', include('apps.blog.urls')),
-    url(r'^b/', include('apps.blog.urls')),
 
     # tiny url app
-    url(r'^tinyurl/', include('apps.tiny_url.urls')),
     url(r'^t/', include('apps.tiny_url.urls')),
 ]
 
