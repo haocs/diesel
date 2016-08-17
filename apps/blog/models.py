@@ -30,7 +30,7 @@ class Post(models.Model):
     title = models.CharField(max_length=256)
     content = models.TextField(default='', blank=True)
     created_timestamp = models.DateTimeField(default=datetime.now, blank=True)
-    mod_timestamp = models.DateField()
+    mod_timestamp = models.DateField(default=datetime.now, blank=True)
     privacy = models.CharField(max_length=10, choices=PRIVACY_OPTS, default=PRIVACY_OPTS[0][0], blank=True)
     deleted = models.BooleanField(default=False, blank=True)
     del_timestamp = models.DateField(null=True, blank=True)
