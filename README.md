@@ -6,6 +6,7 @@ Django powered personal website
 * [ ] Rate limit
 * [ ] UI
 * [ ] Logging and debuging
+* [ ] Dockerize
 * [ ] test
 
 ## Requirements
