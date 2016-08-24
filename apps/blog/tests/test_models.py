@@ -1,5 +1,6 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 from apps.blog.models import Post, Tag
 
@@ -11,7 +12,9 @@ class PostTestCase(TestCase):
         )
 
     def test_create_post_should_pass(self):
-        post1 = Post(author=self.test_user, title='test post 1', content='test content 1', status='p')
+        now = timezone.now()
+        post1 = Post(author=self.test_user, title='test post 1', content='test content 1', status='p',
+                     created_timestamp=now)
         post1.save()
         post_get = Post.objects.latest('id')
         self.assertEqual(post1.title, post_get.title)
@@ -23,7 +26,8 @@ class PostTestCase(TestCase):
         self.assertEqual('all', post_get.privacy)
 
     def test_create_post_with_tags_should_pass(self):
-        post1 = Post(author=self.test_user, title='test post 1', content='test content 1', status='p')
+        now = timezone.now()
+        post1 = Post(author=self.test_user, title='test post 1', content='test content 1', created_timestamp=now)
         post1.save()
         tag1 = Tag(name='testtag1')
         tag1.save()
