@@ -7,7 +7,6 @@ Django powered personal website
 * [ ] UI
 * [ ] Logging and debuging
 * [ ] Dockerize
-* [ ] test
 
 ## Requirements
 * python: 3.3+
