@@ -15,5 +15,15 @@ def create_post(request):
         content = data['content']
         tags = data['tags']
         new_post = Post(title=title, content=content)
+
+
+def update_post(request):
+    pass
+
+
+def delete_post(request):
+    pass
+
+
         
 

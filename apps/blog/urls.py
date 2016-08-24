@@ -1,8 +1,10 @@
-from django.conf.urls import url, include
+from django.conf.urls import url
 
 from . import views
 
 urlpatterns = [
     url(r'', views.index),
-    url(r'^new', views.create_post)
+    url(r'^create', views.create_post),
+    url(r'^update', views.update_post),
+    url(r'^delete', views.delete_post)
 ]
