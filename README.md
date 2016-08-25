@@ -28,7 +28,7 @@ sudo apt-get install libmariadbclient-dev # mariaDB
 
 sudo zypper install ibmysqlclient-devel # mysql/mariaDB on opensuse
 
-# python-dev 
+# python-dev
 sudo apt-get install python-dev # ubuntu
 sudo zypper install python-devel # opensuse
 ```
