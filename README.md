@@ -26,7 +26,7 @@ mysql -uroot -ppasswd < ./scripts/db/init_db_default.sql
 sudo apt-get install libmysqlclient-dev # mysql
 sudo apt-get install libmariadbclient-dev # mariaDB
 
-sudo zypper install ibmysqlclient-devel # mysql/mariaDB on opensuse
+sudo zypper install libmysqlclient-devel # mysql/mariaDB on opensuse
 
 # python-dev
 sudo apt-get install python-dev # ubuntu
