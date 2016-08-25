@@ -27,6 +27,7 @@ class Post(models.Model):
     )
 
     # Define Post schema
+    uri = models.CharField(max_length=2000)
     language = models.CharField(max_length=5, choices=LANGUAGES, default=LANGUAGES[0][0], blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=256)
