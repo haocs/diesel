@@ -3,27 +3,24 @@ from django.http import HttpResponse
 from .models import Post, Tag
 
 
-def index(request):
+def create_post(request, **kwargs):
+    pass
+
+def update_post(request, **kwargs):
+    pass
+
+def delete_post(request, **kwargs):
+    pass
+
+def list_posts(request):
     if request.method == 'GET':
+# don't bother with paging for now
+# 1. query all posts
+# 2. return a list of post objects to post_list template.
+        posts = Post.objects.all()
+        print(posts)
         return HttpResponse('hello')
 
-
-def create_post(request):
-    if request.method == 'POST':
-        data = request.POST
-        title = data['title']
-        content = data['content']
-        tags = data['tags']
-        new_post = Post(title=title, content=content)
-
-
-def update_post(request):
+def error(error_code, msg):
     pass
-
-
-def delete_post(request):
-    pass
-
-
-        
 
