@@ -2,6 +2,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Post, Tag
 
+def post_handle(request, **kwargs):
+    if request.method == 'GET':
+        get_post(request, kwargs)
+
+def get_post(request, uri):
+    pass
 
 def create_post(request, **kwargs):
     pass
@@ -9,7 +15,7 @@ def create_post(request, **kwargs):
 def update_post(request, **kwargs):
     pass
 
-def delete_post(request, **kwargs):
+def delete_post(request, uri):
     pass
 
 def list_posts(request):
