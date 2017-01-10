@@ -43,6 +43,7 @@ instance/
 .virtualenv/
 .ENV/
 env/
+.env/
 
 # pycharm/idea
 .idea/
