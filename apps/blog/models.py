@@ -10,7 +10,7 @@ class Tag(models.Model):
         return self.name
 
 
-class Post(models.Model):
+class Article(models.Model):
     PRIVACY_OPTS = (
         ('all', 'public'),
         ('myself', 'yourself'),
@@ -26,7 +26,7 @@ class Post(models.Model):
         ('cn', 'chinese'),
     )
 
-    # Define Post schema
+    # Define Article schema
     uri = models.CharField(max_length=2000)
     language = models.CharField(max_length=5, choices=LANGUAGES, default=LANGUAGES[0][0], blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)

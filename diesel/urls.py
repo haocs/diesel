@@ -20,7 +20,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     # blog app
-    url(r'^blog/', include('apps.blog.urls')),
+    url(r'^blogs/', include('apps.blog.urls')),
 
     # tiny url app
     url(r'^t/', include('apps.tiny_url.urls')),

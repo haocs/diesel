@@ -1,51 +1,51 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from .models import Post, Tag
+from .models import Article, Tag
 
 import json
 
 
 @csrf_exempt
-def post_handle(request, **kwargs):
+def article_handle(request, **kwargs):
     if request.method == 'GET':
-        return get_post(request, **kwargs)
+        return get_article(request, **kwargs)
     elif request.method == 'POST':
-         return create_post(request, **kwargs)
+        return create_article(request, **kwargs)
     elif request.method == 'PUT':
-        update_post(request, **kwargs)
+        return update_article(request, **kwargs)
     elif request.method == 'DELETE':
         pass
 
-def get_post(request, **kwargs):
+def get_article(request, **kwargs):
     return HttpResponse('ok')
 
-def create_post(request, **kwargs):
+def create_article(request, **kwargs):
     if not request.body:
         return HttpResponse('error')
     print(kwargs.get('uri'))
-    print(kwargs.get('post_id'))
-    post_json = json.loads(request.body.decode('utf-8'))
-    print(post_json)
-    print(type(post_json))
-    title = post_json.get('title')
-    content = post_json['title']
-    tags = post_json.get('tags')
+    print(kwargs.get('article_id'))
+    article_json = json.loads(request.body.decode('utf-8'))
+    print(article_json)
+    print(type(article_json))
+    title = article_json.get('title')
+    content = article_json['title']
+    tags = article_json.get('tags')
     return HttpResponse('ok')
 
-def update_post(request, **kwargs):
+def update_article(request, **kwargs):
     pass
 
-def delete_post(request, uri):
+def delete_article(request, uri):
     pass
 
-def list_posts(request):
+def list_articles(request):
     if request.method == 'GET':
 # don't bother with paging for now
-# 1. query all posts
-# 2. return a list of post objects to post_list template.
-        posts = Post.objects.all()
-        print(posts)
+# 1. query all articles
+# 2. return a list of article objects to article_list template.
+        articles = article.objects.all()
+        print(articles)
         return HttpResponse('hello')
 
 def error(error_code, msg):
